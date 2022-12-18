@@ -21,8 +21,15 @@ def input_dat(name):
 def p_print(name, k, counter, value):
     print(f"Ходил {name}, взял {k} конфет, поэтому у него {counter}. Осталось на столе {value} конфет")
 
+def dot_calc(value):
+    k = randint(1, 29)
+    while value-k <= 28 and value > 29:
+        k = randint(1, 29)
+    return k
+
+
 player1 = input("Введите имя 1-го игрока: ")
-player2 = input("Введите имя 2-го игрока: ")
+player2 = "Bot"
 value = int(input("введите количество конфет на столе: "))
 flag = randint(0,2)
 
@@ -42,8 +49,8 @@ while value > 28:
         flag = False
         p_print(player1, k, counter1, value)
     else:
-        k = input_dat(player2)
-        counter1 += k
+        k = bot_calc(value)
+        counter2 += k
         value -= k 
         flag = True
         p_print(player2, k, counter2, value)
