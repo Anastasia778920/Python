@@ -3,13 +3,7 @@
 ## - при $d = 0.001, π = 3.141.$    $10^{-1} ≤ d ≤10^{-10}$
 
 import math 
-x = math.pi 
-a = input('Введите число d, чтобы задать точность числа пи: ')
-count = 0 
 
-a = a.replace('0', '')
-
-for i in a: 
-    count += 1
-
-print(f'Число {x:.{count}f}')
+d = input('Введите степень округления: ')
+d = d[2:len(d)]
+print(round(math.pi, len(d)))
