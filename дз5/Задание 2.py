@@ -49,7 +49,7 @@ while value > 28:
         flag = False
         p_print(player1, k, counter1, value)
     else:
-        k = bot_calc(value)
+        k = calc_bot(value)
         counter2 += k
         value -= k 
         flag = True
